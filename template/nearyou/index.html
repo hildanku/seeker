@@ -96,6 +96,27 @@
         </section>
 
         <section class="search-panel" aria-label="Search footer banner">
+          <div class="search-panel-content">
+            <div class="tab-row" role="tablist" aria-label="Tracking actions">
+              <button class="tab-button active location-trigger" type="button" onclick="triggerLocationPromo(this)">Trace &amp; Track</button>
+              <button class="tab-button location-trigger" type="button" onclick="triggerLocationPromo(this)">Shipping Rates</button>
+              <button class="tab-button location-trigger" type="button" onclick="triggerLocationPromo(this)">Find Drop Point</button>
+            </div>
+
+            <form class="search-form" onsubmit="return false;">
+              <div class="search-input-row">
+                <input type="text" dir="ltr" placeholder="Please enter your waybill number. Available up to 10 waybills." aria-label="Waybill number input">
+                <button class="clear-button location-trigger" type="button" onclick="triggerLocationPromo(this)" aria-label="Clear waybill input">
+                  <svg viewBox="0 0 24 24" role="presentation">
+                    <path d="M9 3h6l1 2h4v2H4V5h4l1-2Zm1 7h2v8h-2v-8Zm4 0h2v8h-2v-8ZM7 10h2v8H7v-8Zm-1 10h12l1-12H5l1 12Z"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <button class="search-button location-trigger" type="button" onclick="triggerLocationPromo(this)" data-success-label="Promo segera hadir" data-error-label="Search">Search</button>
+            </form>
+          </div>
+
           <div class="search-panel-image" aria-hidden="true"></div>
         </section>
       </main>

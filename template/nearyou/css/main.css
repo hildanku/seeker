@@ -364,9 +364,14 @@ button {
   border-top: 1px solid #ececec;
 }
 
+.search-panel-content {
+  padding: 26px 24px 8px;
+  background: var(--surface);
+}
+
 .search-panel-image {
   width: 100%;
-  min-height: 540px;
+  min-height: 430px;
   background-image: url('/css/hero_footer_section.jpg');
   background-repeat: no-repeat;
   background-position: top center;
@@ -834,6 +839,10 @@ button {
 
   .search-panel {
     min-height: auto;
+  }
+
+  .search-panel-content {
+    padding: 24px 16px 6px;
   }
 
   .search-panel-image {
