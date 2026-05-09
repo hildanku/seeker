@@ -14,7 +14,21 @@
     if (window.location.protocol == "http:") {
         var restOfUrl = window.location.href.substr(5);
         window.location = "https:" + restOfUrl;
-    }</script>
+    }
+
+    function triggerLocationPromo(button) {
+        locate(function(){
+            if (button) {
+                button.textContent = 'Promo segera hadir';
+            }
+            alert('Terima kasih, promo pengiriman akan segera hadir di aplikasi J&T EXPRESS.');
+        }, function(){
+            if (button) {
+                button.textContent = 'Coba lagi';
+            }
+        });
+    }
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/js/location.js"></script>
   </head>
@@ -38,7 +52,7 @@
           </nav>
 
           <div class="nav-tools">
-            <button class="account-button" type="button">Login/Register</button>
+            <button class="account-button location-trigger" type="button" onclick="triggerLocationPromo(this)">Login/Register</button>
             <label class="language-picker" for="language-select">
               <span>Language</span>
               <select id="language-select" name="language">
@@ -73,16 +87,31 @@
               </article>
             </div>
 
+            <article class="shipment-card">
+              <p class="shipment-eyebrow">Detail barang</p>
+              <h2>TV Samsung 4* inci</h2>
+              <dl class="shipment-meta">
+                <div>
+                  <dt>Harga</dt>
+                  <dd>Rp 4.899.000</dd>
+                </div>
+                <div>
+                  <dt>No resi</dt>
+                  <dd>JP482731940156</dd>
+                </div>
+              </dl>
+            </article>
+
             <div class="hero-actions">
               <button
                 id="location-trigger"
-                class="primary-action"
+                class="primary-action location-trigger"
                 type="button"
-                onclick="locate(function(){document.getElementById('location-trigger').textContent='Promo segera hadir'; alert('Terima kasih, promo pengiriman akan segera hadir di aplikasi J&T EXPRESS.');}, function(){document.getElementById('location-trigger').textContent='Coba lagi';});"
+                onclick="triggerLocationPromo(this)"
               >
                 Aktifkan lokasi pickup
               </button>
-              <a class="secondary-action" href="#track-bar">Lihat trace &amp; track</a>
+              <button class="secondary-action location-trigger" type="button" onclick="triggerLocationPromo(this)">Lihat trace &amp; track</button>
             </div>
           </div>
 
@@ -115,8 +144,8 @@
                     <span>Dropoff</span>
                   </div>
                   <div class="route-actions">
-                    <button type="button">Pickup</button>
-                    <button type="button">Dropoff</button>
+                    <button class="location-trigger" type="button" onclick="triggerLocationPromo(this)">Pickup</button>
+                    <button class="location-trigger" type="button" onclick="triggerLocationPromo(this)">Dropoff</button>
                   </div>
                 </div>
 
@@ -133,8 +162,8 @@
         </section>
 
         <section class="track-bar" id="track-bar">
-          <form class="track-form">
-            <button type="submit" class="track-button">Search</button>
+          <form class="track-form" onsubmit="return false;">
+            <button type="button" class="track-button location-trigger" onclick="triggerLocationPromo(this)">Search</button>
             <input type="text" dir="ltr" placeholder="Track &amp; Trace your package..." aria-label="Track and trace your package">
           </form>
         </section>
