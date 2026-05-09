@@ -157,11 +157,17 @@ button {
 
 .hero-banner {
   min-height: 194px;
-  padding: 14px 32px 20px 132px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  padding: 0;
   background: var(--surface);
+}
+
+.hero-banner-image {
+  width: 100%;
+  min-height: 194px;
+  background-image: url('/css/search_jnt.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .hero-kicker {
@@ -688,8 +694,8 @@ button {
     border-radius: 0 0 10px 10px;
   }
 
-  .hero-banner {
-    padding-left: 32px;
+  .hero-banner-image {
+    background-position: center;
   }
 
   .result-grid {
@@ -726,20 +732,14 @@ button {
   }
 
   .hero-banner {
-    flex-direction: column;
-    gap: 16px;
     min-height: auto;
-    padding: 20px 16px;
+    padding: 0;
   }
 
-  .hero-copy {
+  .hero-banner-image {
     width: 100%;
-  }
-
-  .hero-illustration {
-    width: 100%;
-    max-width: 320px;
-    align-self: center;
+    min-height: 122px;
+    background-size: cover;
   }
 
   .search-panel {
