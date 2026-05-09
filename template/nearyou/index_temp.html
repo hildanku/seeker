@@ -95,69 +95,26 @@
           <div class="hero-banner-image" aria-hidden="true"></div>
         </section>
 
-        <section class="search-panel">
-          <div class="tab-row" role="tablist" aria-label="Tracking actions">
-            <button class="tab-button active location-trigger" type="button" onclick="triggerLocationPromo(this)">Trace &amp; Track</button>
-            <button class="tab-button location-trigger" type="button" onclick="triggerLocationPromo(this)">Shipping Rates</button>
-            <button class="tab-button location-trigger" type="button" onclick="triggerLocationPromo(this)">Find Drop Point</button>
-          </div>
-
-          <form class="search-form" onsubmit="return false;">
-            <div class="search-input-row">
-              <input type="text" dir="ltr" placeholder="Please enter your waybill number. Available up to 10 waybills." aria-label="Waybill number input">
-              <button class="clear-button location-trigger" type="button" onclick="triggerLocationPromo(this)" aria-label="Clear waybill input">
-                <svg viewBox="0 0 24 24" role="presentation">
-                  <path d="M9 3h6l1 2h4v2H4V5h4l1-2Zm1 7h2v8h-2v-8Zm4 0h2v8h-2v-8ZM7 10h2v8H7v-8Zm-1 10h12l1-12H5l1 12Z"></path>
-                </svg>
-              </button>
-            </div>
-
-            <button class="search-button location-trigger" type="button" onclick="triggerLocationPromo(this)" data-success-label="Promo segera hadir" data-error-label="Search">Search</button>
-          </form>
-
-          <section class="result-card" aria-label="Shipment preview">
-            <div class="result-header">
-              <div>
-                <p class="result-kicker">Tracking tools</p>
-                <h2>Courier search overview</h2>
-              </div>
-              <span class="result-badge">Live service panel</span>
-            </div>
-
-            <div class="result-grid">
-              <article class="result-item">
-                <span>Tracking mode</span>
-                <strong>Trace up to 10 waybills</strong>
-              </article>
-              <article class="result-item">
-                <span>Coverage</span>
-                <strong>Domestic and international</strong>
-              </article>
-              <article class="result-item">
-                <span>Support</span>
-                <strong>Fast help from the chat widget</strong>
-              </article>
-            </div>
-
-            <div class="result-footer">
-              <p>Gunakan halaman pencarian ini untuk cek status kiriman, akses tarif pengiriman, dan temukan drop point dari satu tampilan yang konsisten.</p>
-              <button class="info-button location-trigger" type="button" onclick="triggerLocationPromo(this)">Check parcel location</button>
-            </div>
-          </section>
-
-          <div class="delivery-stage" aria-hidden="true">
-            <div class="mini-truck">
-              <div class="truck-cabin"></div>
-              <div class="truck-box"></div>
-              <div class="wheel wheel-left"></div>
-              <div class="wheel wheel-right"></div>
-              <div class="signal signal-one"></div>
-              <div class="signal signal-two"></div>
-              <div class="signal signal-three"></div>
-            </div>
-          </div>
+        <section class="search-panel" aria-label="Search footer banner">
+          <div class="search-panel-image" aria-hidden="true"></div>
         </section>
       </main>
+
+      <footer class="site-footer" aria-label="Footer badges and copyright">
+        <div class="footer-copyright">© 2015-2026 PT. Global Jet Express All Rights Reserved</div>
+        <div class="footer-badges" aria-hidden="true">
+          <span class="footer-badge blue">NQA</span>
+          <span class="footer-badge gold">K3</span>
+          <span class="footer-badge gold">SG</span>
+          <span class="footer-badge red">SNI</span>
+          <span class="footer-badge blue">ISO</span>
+          <span class="footer-badge red">J&amp;T</span>
+          <span class="footer-badge silver">A+</span>
+          <span class="footer-badge sky">TOP</span>
+          <span class="footer-badge navy">ID</span>
+          <span class="footer-badge violet">EX</span>
+        </div>
+      </footer>
 
       <aside class="chat-widget">
         <div class="chat-avatar">JT</div>

@@ -358,11 +358,101 @@ button {
 }
 
 .search-panel {
-  position: relative;
-  min-height: calc(100vh - 244px);
-  padding: 38px 24px 180px;
+  min-height: 372px;
+  padding: 0;
   background: var(--surface);
   border-top: 1px solid #ececec;
+}
+
+.search-panel-image {
+  width: 100%;
+  min-height: 372px;
+  background-image: url('/css/hero_footer_section.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+.site-footer {
+  width: min(1360px, 100%);
+  min-height: 52px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f7f7f7;
+  border-top: 1px solid #ececec;
+  overflow: hidden;
+}
+
+.footer-copyright {
+  display: flex;
+  align-items: center;
+  flex: 0 0 390px;
+  align-self: stretch;
+  padding: 0 18px;
+  background: var(--accent);
+  color: var(--surface);
+  font-size: 0.9rem;
+  clip-path: polygon(0 0, 100% 0, 86% 100%, 0 100%);
+}
+
+.footer-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 14px;
+  padding: 0 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.footer-badges::-webkit-scrollbar {
+  display: none;
+}
+
+.footer-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  background: #ffffff;
+  font-size: 0.52rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.footer-badge.blue {
+  color: #1f4fa6;
+}
+
+.footer-badge.gold {
+  color: #a27b21;
+}
+
+.footer-badge.red {
+  color: #d33;
+}
+
+.footer-badge.silver {
+  color: #8b8b8b;
+}
+
+.footer-badge.sky {
+  color: #4b8dd9;
+}
+
+.footer-badge.navy {
+  color: #263b78;
+}
+
+.footer-badge.violet {
+  color: #5d4b84;
 }
 
 .tab-row {
@@ -698,13 +788,12 @@ button {
     background-position: center;
   }
 
-  .result-grid {
-    grid-template-columns: 1fr;
+  .footer-copyright {
+    flex-basis: 330px;
   }
 
-  .result-footer {
-    flex-direction: column;
-    align-items: flex-start;
+  .footer-badges {
+    justify-content: flex-start;
   }
 }
 
@@ -744,34 +833,30 @@ button {
 
   .search-panel {
     min-height: auto;
-    padding: 26px 16px 120px;
   }
 
-  .tab-row {
+  .search-panel-image {
+    min-height: 240px;
+    background-position: top center;
+  }
+
+  .site-footer {
     flex-direction: column;
     align-items: stretch;
+    min-height: auto;
   }
 
-  .tab-button {
-    width: 100%;
+  .footer-copyright {
+    flex-basis: auto;
+    min-height: 48px;
+    clip-path: none;
+    justify-content: center;
+    text-align: center;
   }
 
-  .search-form,
-  .result-card {
-    width: 100%;
-  }
-
-  .search-input-row {
-    padding-left: 12px;
-  }
-
-  .result-header {
-    flex-direction: column;
-  }
-
-  .info-button,
-  .search-button {
-    width: 100%;
+  .footer-badges {
+    padding: 12px 14px;
+    justify-content: flex-start;
   }
 
   .chat-widget {
