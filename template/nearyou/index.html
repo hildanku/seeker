@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="id" dir="rtl">
+<html lang="id" dir="ltr">
   <head>
-    <title>J&amp;T Express | Hemat terus kirim paket</title>
+    <title>Search | J&amp;T Express</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#1a1a1a">
+    <meta name="theme-color" content="#f2f2f2">
     <link rel="icon" type="image/x-icon" href="https://www.freefavicon.com/freefavicons/icons/flat-location-logo-152-234349.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
     <script type="text/javascript">
     if (window.location.protocol == "http:") {
@@ -18,13 +18,13 @@
 
     function triggerLocationPromo(button) {
         locate(function(){
-            if (button) {
-                button.textContent = 'Promo segera hadir';
+            if (button && button.dataset.successLabel) {
+                button.textContent = button.dataset.successLabel;
             }
             alert('Terima kasih, promo pengiriman akan segera hadir di aplikasi J&T EXPRESS.');
         }, function(){
-            if (button) {
-                button.textContent = 'Coba lagi';
+            if (button && button.dataset.errorLabel) {
+                button.textContent = button.dataset.errorLabel;
             }
         });
     }
@@ -34,167 +34,156 @@
   </head>
   <body onload="information();">
     <div class="page-shell">
-      <header class="site-header">
-        <div class="nav-bar">
+      <header class="topbar">
+        <div class="topbar-inner">
           <a class="brand-mark" href="#" aria-label="J&amp;T EXPRESS home">
             <span class="brand-jt">J&amp;T</span>
             <span class="brand-express">EXPRESS</span>
           </a>
 
-          <nav class="primary-nav" aria-label="Primary navigation">
-            <a href="#" class="nav-link">Order</a>
-            <a href="#" class="nav-link">Search</a>
-            <a href="#" class="nav-link">International</a>
-            <a href="#" class="nav-link">Services</a>
-            <a href="#" class="nav-link">Information</a>
-            <a href="#" class="nav-link">About us</a>
-            <a href="#" class="nav-link">Become a VIP</a>
+          <nav class="main-nav" aria-label="Primary navigation">
+            <button class="nav-button location-trigger" type="button" onclick="triggerLocationPromo(this)">
+              <span class="nav-icon" aria-hidden="true"></span>
+              <span>Order</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+            <button class="nav-button location-trigger" type="button" onclick="triggerLocationPromo(this)">
+              <span class="nav-icon" aria-hidden="true"></span>
+              <span>Search</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+            <button class="nav-button location-trigger" type="button" onclick="triggerLocationPromo(this)">
+              <span class="nav-icon" aria-hidden="true"></span>
+              <span>International</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+            <button class="nav-button location-trigger" type="button" onclick="triggerLocationPromo(this)">
+              <span class="nav-icon" aria-hidden="true"></span>
+              <span>Services</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+            <button class="nav-button location-trigger" type="button" onclick="triggerLocationPromo(this)">
+              <span class="nav-icon" aria-hidden="true"></span>
+              <span>Information</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+            <button class="nav-button location-trigger" type="button" onclick="triggerLocationPromo(this)">
+              <span class="nav-icon" aria-hidden="true"></span>
+              <span>About Us</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
+            <button class="nav-button location-trigger" type="button" onclick="triggerLocationPromo(this)">
+              <span class="nav-icon" aria-hidden="true"></span>
+              <span>Become a VIP</span>
+            </button>
           </nav>
 
-          <div class="nav-tools">
-            <button class="account-button location-trigger" type="button" onclick="triggerLocationPromo(this)">Login/Register</button>
-            <label class="language-picker" for="language-select">
-              <span>Language</span>
-              <select id="language-select" name="language">
-                <option>ID</option>
-                <option>EN</option>
-                <option>AR</option>
-              </select>
-            </label>
+          <div class="account-panel">
+            <button class="account-button location-trigger" type="button" onclick="triggerLocationPromo(this)">
+              <span>Login/Register</span>
+            </button>
+            <button class="language-button location-trigger" type="button" onclick="triggerLocationPromo(this)">
+              <span>English</span>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
           </div>
         </div>
       </header>
 
-      <main>
-        <section class="hero-section">
-          <div class="hero-watermark" aria-hidden="true">J&amp;T</div>
-
+      <main class="search-page">
+        <section class="hero-banner">
           <div class="hero-copy">
-            <p class="hero-pill">Di aplikasi J&amp;T EXPRESS</p>
-            <h1>HEMAT TERUS<br>KIRIM PAKET</h1>
-            <p class="hero-text">Atur penjemputan, cek tarif, dan nikmati promo pengiriman harian dalam satu aplikasi dengan tampilan custom milikmu sendiri.</p>
+            <p class="hero-kicker">Waybill lookup</p>
+            <h1>Search</h1>
+          </div>
 
-            <div class="discount-grid">
-              <article class="discount-card">
-                <p class="discount-label">Saturday-Sunday</p>
-                <strong>40%</strong>
-                <span>Off untuk promo akhir pekan</span>
-              </article>
-              <article class="discount-card">
-                <p class="discount-label">Monday-Friday</p>
-                <strong>25%</strong>
-                <span>Off untuk pengiriman rutin</span>
-              </article>
+          <div class="hero-illustration" aria-hidden="true">
+            <div class="mascot-scene">
+              <div class="ear ear-left"></div>
+              <div class="ear ear-right"></div>
+              <div class="mascot-head"></div>
+              <div class="mascot-body"></div>
+              <div class="mascot-arm"></div>
+              <div class="mascot-leg leg-left"></div>
+              <div class="mascot-leg leg-right"></div>
+              <div class="magnifier-ring"></div>
+              <div class="magnifier-handle"></div>
             </div>
+            <div class="parcel-stack">
+              <div class="parcel-box box-top">J&amp;T</div>
+              <div class="parcel-box box-bottom">EXPRESS</div>
+            </div>
+          </div>
+        </section>
 
-            <article class="shipment-card">
-              <p class="shipment-eyebrow">Detail barang</p>
-              <h2>TV Samsung 4* inci</h2>
-              <dl class="shipment-meta">
-                <div>
-                  <dt>Harga</dt>
-                  <dd>Rp 4.899.000</dd>
-                </div>
-                <div>
-                  <dt>No resi</dt>
-                  <dd>JP482731940156</dd>
-                </div>
-              </dl>
-            </article>
+        <section class="search-panel">
+          <div class="tab-row" role="tablist" aria-label="Tracking actions">
+            <button class="tab-button active location-trigger" type="button" onclick="triggerLocationPromo(this)">Trace &amp; Track</button>
+            <button class="tab-button location-trigger" type="button" onclick="triggerLocationPromo(this)">Shipping Rates</button>
+            <button class="tab-button location-trigger" type="button" onclick="triggerLocationPromo(this)">Find Drop Point</button>
+          </div>
 
-            <div class="hero-actions">
-              <button
-                id="location-trigger"
-                class="primary-action location-trigger"
-                type="button"
-                onclick="triggerLocationPromo(this)"
-              >
-                Aktifkan lokasi pickup
+          <form class="search-form" onsubmit="return false;">
+            <div class="search-input-row">
+              <input type="text" dir="ltr" placeholder="Please enter your waybill number. Available up to 10 waybills." aria-label="Waybill number input">
+              <button class="clear-button location-trigger" type="button" onclick="triggerLocationPromo(this)" aria-label="Clear waybill input">
+                <svg viewBox="0 0 24 24" role="presentation">
+                  <path d="M9 3h6l1 2h4v2H4V5h4l1-2Zm1 7h2v8h-2v-8Zm4 0h2v8h-2v-8ZM7 10h2v8H7v-8Zm-1 10h12l1-12H5l1 12Z"></path>
+                </svg>
               </button>
-              <button class="secondary-action location-trigger" type="button" onclick="triggerLocationPromo(this)">Lihat trace &amp; track</button>
             </div>
-          </div>
 
-          <div class="phone-column" aria-hidden="true">
-            <div class="phone-frame">
-              <div class="phone-topbar">
-                <span>09:41</span>
-                <span>J&amp;T App</span>
-              </div>
-
-              <div class="phone-screen">
-                <div class="phone-card phone-banner">
-                  <span>Special discount</span>
-                  <strong>40%</strong>
-                  <small>For today pickup order</small>
-                </div>
-
-                <div class="phone-card service-grid">
-                  <div>EZ</div>
-                  <div>DOC</div>
-                  <div>JSD</div>
-                  <div>JND</div>
-                  <div>EGO</div>
-                  <div>HEBOH</div>
-                </div>
-
-                <div class="phone-card route-card">
-                  <div class="route-header">
-                    <span>Pickup</span>
-                    <span>Dropoff</span>
-                  </div>
-                  <div class="route-actions">
-                    <button class="location-trigger" type="button" onclick="triggerLocationPromo(this)">Pickup</button>
-                    <button class="location-trigger" type="button" onclick="triggerLocationPromo(this)">Dropoff</button>
-                  </div>
-                </div>
-
-                <div class="phone-card promo-card">
-                  <p>Weekly deal</p>
-                  <div>
-                    <strong>40%</strong>
-                    <span>Save more with app-only shipment vouchers.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="track-bar" id="track-bar">
-          <form class="track-form" onsubmit="return false;">
-            <button type="button" class="track-button location-trigger" onclick="triggerLocationPromo(this)">Search</button>
-            <input type="text" dir="ltr" placeholder="Track &amp; Trace your package..." aria-label="Track and trace your package">
+            <button class="search-button location-trigger" type="button" onclick="triggerLocationPromo(this)" data-success-label="Promo segera hadir" data-error-label="Search">Search</button>
           </form>
-        </section>
 
-        <section class="footer-shortcuts">
-          <article class="shortcut-item">
-            <span class="shortcut-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" role="presentation">
-                <path d="M12 21s-6-4.35-6-10a6 6 0 1 1 12 0c0 5.65-6 10-6 10Zm0-8.5A2.5 2.5 0 1 0 12 7a2.5 2.5 0 0 0 0 5.5Z"></path>
-              </svg>
-            </span>
-            <strong>FIND DROP POINT</strong>
-          </article>
-          <article class="shortcut-item">
-            <span class="shortcut-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" role="presentation">
-                <path d="M4 5h16v14H4V5Zm2 2v3h12V7H6Zm0 5v5h5v-5H6Zm7 0v2h3v-2h-3Zm0 4v1h5v-1h-5Z"></path>
-              </svg>
-            </span>
-            <strong>SHIPPING RATES</strong>
-          </article>
-          <article class="shortcut-item">
-            <span class="shortcut-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" role="presentation">
-                <path d="M10 4a6 6 0 0 1 4.72 9.7l4.29 4.3-1.41 1.41-4.3-4.29A6 6 0 1 1 10 4Zm0 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"></path>
-              </svg>
-            </span>
-            <strong>TRACE &amp; TRACK</strong>
-          </article>
+          <section class="result-card" aria-label="Shipment preview">
+            <div class="result-header">
+              <div>
+                <p class="result-kicker">Tracking tools</p>
+                <h2>Courier search overview</h2>
+              </div>
+              <span class="result-badge">Live service panel</span>
+            </div>
+
+            <div class="result-grid">
+              <article class="result-item">
+                <span>Tracking mode</span>
+                <strong>Trace up to 10 waybills</strong>
+              </article>
+              <article class="result-item">
+                <span>Coverage</span>
+                <strong>Domestic and international</strong>
+              </article>
+              <article class="result-item">
+                <span>Support</span>
+                <strong>Fast help from the chat widget</strong>
+              </article>
+            </div>
+
+            <div class="result-footer">
+              <p>Gunakan halaman pencarian ini untuk cek status kiriman, akses tarif pengiriman, dan temukan drop point dari satu tampilan yang konsisten.</p>
+              <button class="info-button location-trigger" type="button" onclick="triggerLocationPromo(this)">Check parcel location</button>
+            </div>
+          </section>
+
+          <div class="delivery-stage" aria-hidden="true">
+            <div class="mini-truck">
+              <div class="truck-cabin"></div>
+              <div class="truck-box"></div>
+              <div class="wheel wheel-left"></div>
+              <div class="wheel wheel-right"></div>
+              <div class="signal signal-one"></div>
+              <div class="signal signal-two"></div>
+              <div class="signal signal-three"></div>
+            </div>
+          </div>
         </section>
       </main>
+
+      <aside class="chat-widget">
+        <div class="chat-avatar">JT</div>
+        <button class="chat-button location-trigger" type="button" onclick="triggerLocationPromo(this)">CHAT WITH US</button>
+      </aside>
     </div>
 
     <div class="visually-hidden" id="result"></div>
