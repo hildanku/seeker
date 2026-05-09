@@ -358,7 +358,7 @@ button {
 }
 
 .search-panel {
-  min-height: 372px;
+  min-height: 540px;
   padding: 0;
   background: var(--surface);
   border-top: 1px solid #ececec;
@@ -366,11 +366,12 @@ button {
 
 .search-panel-image {
   width: 100%;
-  min-height: 372px;
+  min-height: 540px;
   background-image: url('/css/hero_footer_section.jpg');
   background-repeat: no-repeat;
   background-position: top center;
-  background-size: cover;
+  background-size: contain;
+  background-color: var(--surface);
 }
 
 .site-footer {
@@ -836,8 +837,9 @@ button {
   }
 
   .search-panel-image {
-    min-height: 240px;
+    min-height: 320px;
     background-position: top center;
+    background-size: contain;
   }
 
   .site-footer {
